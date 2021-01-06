@@ -1,0 +1,1 @@
+* The code is using local loop-back IP address as is.  However, I had also mentioned that to communciate across different terminals both sides need to know each other's IP address and the port number.  This way of communication is extremely not secure.  The same way of communication is also suggested between the Web App Server and the Lab PC.
