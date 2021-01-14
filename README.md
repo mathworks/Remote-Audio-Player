@@ -5,7 +5,7 @@ Here is a possible usage scenario:
 User machine -- MATLAB Web App Server -- Lab machine
 Any user can control the Lab machine through the web browser.  The code at the Web Server is running in the server and is communicating with the Lab machine.  The sound processing and playing is done at the Lab machine.
 
-These files intend to demonstrate an application running with two threads.  The application allows a user to play an audio file, adjust a fourth-order filter to notch a frequency band and to toggle the use of the filter ON and OFF. The GUI side will send user selections to the player side.  The player side will send the audio data back to the GUI for display.
+These files intend to demonstrate an application running with two instances.  The application allows a user to play an audio file, adjust a fourth-order filter to notch a frequency band and to toggle the use of the filter ON and OFF. The GUI side will send user selections to the player side.  The player side will send the audio data back to the GUI for display.
 
 
 Files needed on the player side:
@@ -18,22 +18,22 @@ runGUI.m
 guiFOSFilterApp.mlapp
 receivedDatGram.m
 
-## Direction
+## Direction (three different usage scenarios)
 =========
-<To run in same machine but with different threads>
+<To run in same machine but with different Matlab instances>
 This allows testing of the user side and the player side on the same PC.
 1, Open two MATLAB workspace.
 2, On one side run the file udpAudioPlayer -- this is the player side.
 3, On the other side run runGUI -- this is the GUI side.
 
-<To run through local network>
+<To run through local network without using Web App Server>
 This allows testing of the user side and the player side on the same network and not using the webAppServer
 1, modify guiFOSFilterApp.mlapp line 129 to set the proper (server and user) IP address.
 2, modify udpAudioPlayer.m line 24 to set the proper IP address (user and server).
 3, On one side run the file udpAudioPlayer -- this is the player side.
 4, On the other side run runGUI -- this is the GUI side.
 
-<To deploy the GUI side to MATLAB Web App Server>
+<GUI side running in MATLAB Web App Server and audio playing in another>
 This is for the usage sencario: User machine -- MATLAB Web App Server -- Lab machine
 1, modify guiFOSFilterApp.mlapp line 129 to set the proper (server and user) IP address.
 2, In App Designer, click Share -> Web App to create the ctf file.
