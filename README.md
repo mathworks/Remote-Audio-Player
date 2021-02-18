@@ -59,8 +59,8 @@ fosFilter.m  	  -- this is the class definition of the forth order filter.
 
 ## Contact
 
-Francis Tiong  ftiong@mathworks.com
-Adam Cook
+Francis Tiong  ftiong@mathworks.com,
+Adam Cook	adamcook@mathworks.com	
 
 ## Relevant Industries
 
