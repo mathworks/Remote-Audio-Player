@@ -18,7 +18,7 @@ runGUI.m
 guiFOSFilterApp.mlapp
 receivedDatGram.m
 
-## Direction (three different usage scenarios)
+## Direction 
 =========
 <To run in same machine but with different Matlab instances>
 This allows testing of the user side and the player side on the same PC.
@@ -59,7 +59,8 @@ fosFilter.m  	  -- this is the class definition of the forth order filter.
 
 ## Contact
 
-Francis Tiong (Application Engineering)
+Francis Tiong 
+ftiong@mathworks.com
 
 ## Relevant Industries
 
