@@ -22,7 +22,8 @@ receivedDatGram.m
 =========  
 (To run in same machine but with different Matlab instances)
 This allows testing of the user side and the player side on the same PC.
-1, In MATLAB workspace run runAll.m.
+1, Modify the path in runMATLABbkground.bat to the location of the file udpAudioPlayer.
+2, In MATLAB workspace run runAll.m.
 
 (To run through local network without using Web App Server)
 This allows testing of the user side and the player side on the same network and not using the webAppServer
