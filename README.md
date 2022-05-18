@@ -3,7 +3,7 @@
 ## Overview
 Here is a possible usage scenario:
 User machine -- MATLAB Web App Server -- Lab machine
-Any user can control the Lab machine through the web browser.  The code at the Web Server is running in the server and is communicating with the Lab machine.  The sound processing and playing is done at the Lab machine.
+Any user can control the Lab machine through the web browser.  The code at the Web Server is running in the server and is communicating with the Lab machine.  The sound processing and playing is done at the Lab machine.  The user access the web server through a web browser.  Another usage scenario is to have the user control app and responding code both be running in the same PC but through two instances.  The code is default to this scenario.
 
 These files intend to demonstrate an application running with two instances.  The application allows a user to play an audio file, adjust a fourth-order filter to notch a frequency band and to toggle the use of the filter ON and OFF. The GUI side will send user selections to the player side.  The player side will send the audio data back to the GUI for display.
 
@@ -18,22 +18,20 @@ runGUI.m
 guiFOSFilterApp.mlapp
 receivedDatGram.m
 
-## Direction 
-=========
-<To run in same machine but with different Matlab instances>
+## Direction (three different usage scenarios)
+=========  
+(To run in same machine but with different Matlab instances)
 This allows testing of the user side and the player side on the same PC.
-1, Open two MATLAB workspace.
-2, On one side run the file udpAudioPlayer -- this is the player side.
-3, On the other side run runGUI -- this is the GUI side.
+1, In MATLAB workspace run runAll.m.
 
-<To run through local network without using Web App Server>
+(To run through local network without using Web App Server)
 This allows testing of the user side and the player side on the same network and not using the webAppServer
 1, modify guiFOSFilterApp.mlapp line 129 to set the proper (server and user) IP address.
 2, modify udpAudioPlayer.m line 24 to set the proper IP address (user and server).
 3, On one side run the file udpAudioPlayer -- this is the player side.
 4, On the other side run runGUI -- this is the GUI side.
 
-<GUI side running in MATLAB Web App Server and audio playing in another>
+(GUI side running in MATLAB Web App Server and audio playing in another)
 This is for the usage sencario: User machine -- MATLAB Web App Server -- Lab machine
 1, modify guiFOSFilterApp.mlapp line 129 to set the proper (server and user) IP address.
 2, In App Designer, click Share -> Web App to create the ctf file.
@@ -44,7 +42,10 @@ This is for the usage sencario: User machine -- MATLAB Web App Server -- Lab mac
 
 
 ## File List
-=========
+=========  
+runAll.m 		-- this is the starter file when both the controlling app (guiFOSFilerApp) and the responding code (udpAudioPlayer) needs to be run in the same PC.
+
+runMATLABbkground.bat -- this is a batch file to run udpAudioPlayer in the background. It is called by runAll.m.
 
 runGUI.m		-- this is the starter file that would bring up the GUI, it simply calls guiFOSFilterApp.mlapp
 
@@ -58,8 +59,8 @@ fosFilter.m  	  -- this is the class definition of the forth order filter.
 
 
 ## Contact
-Francis Tiong  ftiong@mathworks.com,
-Adam Cook	adamcook@mathworks.com	
+
+Francis Tiong (Application Engineering)
 
 ## Relevant Industries
 
@@ -74,5 +75,5 @@ audio components design, audio equipments design, audio systems design, web appl
  *  Audio Toolbox
 
 
-Copyright 2020 - 2021 The MathWorks, Inc.
+Copyright 2020 - 2022 The MathWorks, Inc.
 
